@@ -75,9 +75,8 @@ span {
     margin-top: 10px;
 }
 .close i{
-    color:rgba(126, 31, 129, 0.715);
-    font-size:30px;
-}
+    color:rgba(180, 59, 184, 0.715);
+    font-size:30px;}
 
 .title{
     display: flex;
@@ -86,8 +85,5 @@ span {
 }
 
 .fa-heart:hover{
-color:rgba(193, 32, 102, 0.708);
-}
-.fa-heart::after{
-    color:rgba(193, 32, 102, 0.708); 
+color:rgba(180, 59, 184, 0.715);
 }

@@ -5,28 +5,24 @@ var unitPriceList=document.getElementsByClassName('unit-price');
 var unitSumList=document.getElementsByClassName('unit-sum');
 var totalSum=document.getElementById('total-value');
 var trashCan=document.getElementsByClassName('fa fa-trash-can close');
-var heart=document.getElementsByClassName('fa-solid fa-heart');
-   for (let i=0;i<trashCan.length;i++)
+var heart=document.getElementsByClassName('fa-regular fa-heart');
+ var total=document.getElementById('total-value') ;
+for (let i=0;i<trashCan.length;i++)
     trashCan[i].addEventListener("click",function(event){
     event.target.closest('.row').remove();
    })
-   for (let i=0;i<heart.length;i++)
-   heart[i].addEventListener("click",function(event){
-   event.target.style.color='rgba(193, 32, 102, 0.708)';
-    
-    
-   })
-   
-    
-    
-       
-    
 
-var total=0;
+   for (let i=0;i<heart.length;i++){
+   heart[i].addEventListener("click",function(event){
+    heart[i].classList.toggle("fa-solid");})
+}
 for ( let i=0;i<plusList.length;i++){
     quantityList[i].innerHTML=1;
     var value =unitPriceList[i].textContent;
-    unitSumList[i].innerHTML="$"+value;    
+    unitSumList[i].innerHTML="$"+value;  
+    var totalValue = Number(total.textContent) +Number(value);
+    total.innerHTML=totalValue;
+    console.log(totalValue) ;
 }
 for ( let i=0;i<plusList.length;i++){
 plusList[i].addEventListener("click",function(){
@@ -35,6 +31,8 @@ plusList[i].addEventListener("click",function(){
     quantityList[i].innerHTML=quantityValue;
     var sum =quantityValue*unitPriceList[i].textContent;
     unitSumList[i].innerHTML="$"+sum;
+    var totalValue = Number(total.textContent) +Number(unitPriceList[i].textContent);
+    total.innerHTML=totalValue;
 })
 }
 
@@ -46,6 +44,8 @@ for ( let i=0;i<minList.length;i++){
     quantityList[i].innerHTML=quantityValue;
     var sum =quantityValue*unitPriceList[i].textContent;
     unitSumList[i].innerHTML="$"+sum;
+    var totalValue = Number(total.textContent) -Number(unitPriceList[i].textContent);
+    total.innerHTML=totalValue;
 }
     })
     }
