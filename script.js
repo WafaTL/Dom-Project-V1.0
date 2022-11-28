@@ -10,6 +10,11 @@ var heart=document.getElementsByClassName('fa-regular fa-heart');
 for (let i=0;i<trashCan.length;i++)
     trashCan[i].addEventListener("click",function(event){
     event.target.closest('.row').remove();
+    var totalValue = Number(total.textContent) -Number(unitPriceList[i].textContent);
+    total.innerHTML=totalValue;
+    
+   
+    
    })
 
    for (let i=0;i<heart.length;i++){
